@@ -27,10 +27,15 @@ e.setName("manisha kumar");
 erepo.save(e);
 return"data saved into database";
 }
-@RequestMapping("{city}")
+@RequestMapping("/{city}")
 public List<?> byid(@PathVariable String city)
 {
 	return erepo.findByCity(city);
+}
+@RequestMapping("/by/{name}")
+public List<?> byname(@PathVariable String name)
+{
+	return erepo.findByName(name);
 }
 
 }
