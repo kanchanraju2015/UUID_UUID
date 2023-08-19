@@ -42,4 +42,10 @@ public List<Employee> bynameorcity(@PathVariable String name,@PathVariable Strin
 {
 	return erepo.findByNameOrCity(name, city);
 }
+@RequestMapping("/{name}/and/{city}")
+public List<Employee> bynameandcity(@PathVariable String name,@PathVariable String city)
+{
+	return erepo.findByNameAndCity(name, city);
+	
+}
 }
